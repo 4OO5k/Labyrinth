@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MoveToGoal : MonoBehaviour
 {
+
     public Transform goal;
     private Animator animator;
     private NavMeshAgent agent;
@@ -11,7 +13,7 @@ public class MoveToGoal : MonoBehaviour
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = goal.position;
     }
 
